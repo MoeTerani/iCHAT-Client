@@ -1,0 +1,34 @@
+.form--bar {
+  display: flex;
+  border: 1px solid #848688;
+}
+
+.input--bar {
+  border: none;
+  border-radius: 0;
+  padding: 5%;
+  width: 85%;
+  font-size: 1.2em;
+  background-color: #222529;
+  color: white;
+}
+
+input--bar:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.sendButton {
+  color: #fff !important;
+  background: #222529;
+  padding: 1px;
+  display: inline-block;
+  border: none;
+  width: 15%;
+  cursor: pointer;
+}
+.sendIcon {
+  width: 25px;
+  height: 25px;
+}
