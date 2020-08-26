@@ -27,16 +27,16 @@ const Chat = (props: Props) => {
   // const dispatch = useDispatch();
   const ENDPOINT = 'localhost:5000';
   const name: any = useSelector((state: RootState) => state.JoinReducer.name);
-  const room: any = useSelector((state: RootState) => state.JoinReducer.room);
+
 
   useEffect(() => {
     socket = io(ENDPOINT, {
       reconnection: false,
     });
 
-    socket.emit('join', { name: name.name, room: room.room }, (err: string) => {
+    socket.emit('join', { name: name.name }, (err: string) => {
       setError(err);
-      console.log(error);
+      dispatch(setAlert(err, 'danger'));
     });
 
     return () => {
@@ -51,7 +51,7 @@ const Chat = (props: Props) => {
       // @ts-expect-error
       setMessages((messages: object) => [...messages, msg]);
     });
-    socket.on('roomData', (data: any) => {
+    socket.on('activeUsers', (data: any) => {
       setUsers(data.users);
     });
   }, []);
@@ -85,7 +85,6 @@ const Chat = (props: Props) => {
         <StatusBar />
         <Messages messages={messages} name={name.name} />
         <InputBar
-          room={room.room}
           message={message}
           setMessage={setMessage}
           sendMessage={sendMessage}

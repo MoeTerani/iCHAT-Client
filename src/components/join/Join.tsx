@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { joinDataAction } from '../../store/actions/JoinAction';
 import Alert from './Alert';
 
-interface Props {}
+interface Props { }
 
 const Join = (props: Props) => {
   const [name, setName] = useState('');
@@ -32,26 +32,26 @@ const Join = (props: Props) => {
             placeholder='UserName'
             onChange={(e) => setName(e.target.value)}
             value={name}
+            required
           />
-          <input
+          {/* <input
             className='input--join'
             type='text'
             placeholder='Room'
             onChange={(e) => setRoom(e.target.value)}
             value={room}
-          />
+          /> */}
           <Link to='/chat'>
             <button
               type='submit'
               onClick={() => {
-                dispatch(joinDataAction({ name: { name }, room: { room } }));
+                dispatch(joinDataAction({ name: { name } }));
               }}
               id='login-button'
             >
               Enter
             </button>
           </Link>
-          {/* <h3>{errorMessage}</h3> */}
         </form>
       </div>
 

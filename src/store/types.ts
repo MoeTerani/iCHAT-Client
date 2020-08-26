@@ -1,7 +1,7 @@
 //SKIP BUTTON
 export interface joinState {
   name: string;
-  room: string;
+  users: string;
 }
 export const JOIN_DATA = 'JOIN_DATA';
 export interface joinDataAction {
