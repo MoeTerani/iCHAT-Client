@@ -10,7 +10,7 @@ import SideBar from '../SideBar/SideBar';
 import { Redirect } from 'react-router-dom';
 import { setAlert } from '../../store/actions/alert-action';
 
-interface Props {}
+interface Props { }
 
 let socket: any;
 let TimeOut: any;
@@ -25,7 +25,7 @@ const Chat = (props: Props) => {
   const [timer, setTimer] = useState(false);
 
   // const dispatch = useDispatch();
-  const ENDPOINT = 'https://chat-app-moe.herokuapp.com/';
+  const ENDPOINT = 'localhost:5000';
   const name: any = useSelector((state: RootState) => state.JoinReducer.name);
   const room: any = useSelector((state: RootState) => state.JoinReducer.room);
 
@@ -71,7 +71,7 @@ const Chat = (props: Props) => {
         clearTimeout(TimeOut);
         TimeOut = null;
       }
-      startTimeOut(10000);
+      startTimeOut(30000);
       socket.emit('sendMessage', message, () => setMessage(''));
     }
   };
