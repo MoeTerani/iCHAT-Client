@@ -1,7 +1,7 @@
 //SKIP BUTTON
 export interface joinState {
   name: string;
-  users: string;
+  users: Array<object>;
 }
 
 

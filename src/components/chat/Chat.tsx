@@ -20,7 +20,7 @@ const Chat = (props: Props) => {
   const [message, setMessage] = useState<string>('');
   const [messages, setMessages] = useState([]);
   const [users, setUsers] = useState([]);
-  const [inactiveUser, setInactiveUser] = useState(false);
+  const [connected, setConnected] = useState(true);
   const [error, setError] = useState('');
   const [timer, setTimer] = useState(false);
 
@@ -36,7 +36,7 @@ const Chat = (props: Props) => {
 
     socket.emit('join', { name: name.name }, (err: string) => {
       setError(err);
-      dispatch(setAlert(err, 'danger'));
+      dispatch(setAlert(error, 'danger'));
     });
 
     return () => {
@@ -44,7 +44,7 @@ const Chat = (props: Props) => {
       socket.off();
       console.log('unmounted');
     };
-  }, [ENDPOINT, dispatch, name.name]);
+  }, [ENDPOINT, dispatch, error, name.name]);
 
   useEffect(() => {
     socket.on('message', (msg: object) => {
@@ -54,12 +54,20 @@ const Chat = (props: Props) => {
     socket.on('activeUsers', (data: any) => {
       setUsers(data.users);
     });
-  }, []);
+    socket.on('login_error', (data: any) => {
+      const err = data.errorMessage
+      setConnected(false)
+      setError(data.errorMessage);
+      dispatch(setAlert(err,'danger'))
+      socket.close();
+
+    });
+  }, [dispatch, error]);
 
   function startTimeOut(inactivityTime: number) {
     TimeOut = setTimeout(() => {
       socket.emit('inActiveUser');
-      setInactiveUser(true);
+      setConnected(false);
       dispatch(setAlert('Disconnected due to inactivity', 'danger'));
     }, inactivityTime);
   }
@@ -78,7 +86,7 @@ const Chat = (props: Props) => {
 
   return (
     <div className='outerContainer'>
-      {inactiveUser ? <Redirect to='/' /> : null}
+      {!connected ? <Redirect to='/' /> : null}
 
       <SideBar users={users} />
       <div className='container'>

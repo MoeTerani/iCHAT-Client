@@ -2,7 +2,7 @@ import { joinState, ActionTypes, JOIN_DATA } from '../types';
 
 const initialState: joinState = {
   name: '',
-  users: ''
+  users: []
 };
 export default (state = initialState, action: ActionTypes): joinState => {
   switch (action.type) {
