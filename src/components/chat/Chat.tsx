@@ -13,7 +13,6 @@ import { setAlert } from '../../store/actions/alert-action';
 interface Props { }
 
 let socket: any;
-let TimeOut: any;
 
 const Chat = (props: Props) => {
   const dispatch = useDispatch();
@@ -22,7 +21,6 @@ const Chat = (props: Props) => {
   const [users, setUsers] = useState([]);
   const [connected, setConnected] = useState(true);
   const [error, setError] = useState('');
-  const [timer, setTimer] = useState(false);
 
   // const dispatch = useDispatch();
   const ENDPOINT = 'localhost:5000';
@@ -54,6 +52,12 @@ const Chat = (props: Props) => {
     socket.on('activeUsers', (data: any) => {
       setUsers(data.users);
     });
+    socket.on('timeOut', (data: any) => {
+      socket.emit('inActiveUser');
+      setConnected(false);
+      socket.close();
+    dispatch(setAlert('Disconnected due to inactivity', 'danger'));
+    });
     socket.on('login_error', (data: any) => {
       const err = data.errorMessage
       setConnected(false)
@@ -64,22 +68,11 @@ const Chat = (props: Props) => {
     });
   }, [dispatch, error]);
 
-  function startTimeOut(inactivityTime: number) {
-    TimeOut = setTimeout(() => {
-      socket.emit('inActiveUser');
-      setConnected(false);
-      dispatch(setAlert('Disconnected due to inactivity', 'danger'));
-    }, inactivityTime);
-  }
 
   const sendMessage = (e: React.KeyboardEvent<HTMLInputElement>) => {
     e.preventDefault();
     if (message) {
-      if (TimeOut) {
-        clearTimeout(TimeOut);
-        TimeOut = null;
-      }
-      startTimeOut(30000);
+    
       socket.emit('sendMessage', message, () => setMessage(''));
     }
   };
