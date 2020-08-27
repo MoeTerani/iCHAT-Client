@@ -3,7 +3,10 @@ export interface joinState {
   name: string;
   users: string;
 }
+
+
 export const JOIN_DATA = 'JOIN_DATA';
+
 export interface joinDataAction {
   type: typeof JOIN_DATA;
   payload: any;

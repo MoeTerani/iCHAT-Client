@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import './StatusBar.css';
 import { AiOutlineClose } from 'react-icons/ai';
 import { IoIosChatboxes } from 'react-icons/io';
-import { RootState } from '../../store/store';
+import { RootState } from '../../../store/store';
 import io from 'socket.io-client';
 
 interface Props { }
