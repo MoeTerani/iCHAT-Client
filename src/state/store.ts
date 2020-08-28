@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import JoinReducer from '../store/reducers/JoinReducer';
-import alert from '../store/reducers/alert-reducer';
+import JoinReducer from './reducers/JoinReducer';
+import alert from './reducers/alert-reducer';
 
 const rootReducer = combineReducers({
   JoinReducer,

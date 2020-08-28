@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+import { RootState } from '../../state/store';
 import io from 'socket.io-client';
 import './Chat.css';
 import StatusBar from './statusBar/StatusBar';
@@ -8,7 +8,7 @@ import InputBar from './InputBar/InputBar';
 import Messages from './MessagesContainer/Messages';
 import SideBar from './SideBar/SideBar';
 import { Redirect } from 'react-router-dom';
-import { setAlert } from '../../store/actions/alert-action';
+import { setAlert } from '../../state/actions/alert-action';
 
 interface Props { }
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Join.css';
 import { useDispatch } from 'react-redux';
-import { joinDataAction } from '../../store/actions/JoinAction';
+import { joinDataAction } from '../../state/actions/JoinAction';
 import Alert from './Alert';
 
 interface Props { }
