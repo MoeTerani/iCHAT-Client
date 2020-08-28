@@ -1,14 +1,17 @@
-import { joinState, ActionTypes, JOIN_DATA } from '../types';
+import { logInState, ActionTypes, LOG_IN, LOG_OUT } from '../types';
 
-const initialState: joinState = {
+const initialState: logInState = {
   name: '',
-  users: []
+  users: [],
+  isAuthenticated: false,
 };
-export default (state = initialState, action: ActionTypes): joinState => {
+export default (state = initialState, action: ActionTypes): logInState => {
   switch (action.type) {
-    case JOIN_DATA:
-      return { ...state, name: action.payload.name, users: action.payload.users };
+    case LOG_IN:
+      return { ...state, name: action.payload.name, users: action.payload.users, isAuthenticated: true };
 
+    case LOG_OUT:
+        return { ...initialState };
     default:
       return state;
   }

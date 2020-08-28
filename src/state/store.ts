@@ -6,8 +6,6 @@ import alert from './reducers/alert-reducer';
 const rootReducer = combineReducers({
   JoinReducer,
   alert,
-  //   ctr: counterReducer,
-  //   res: resultReducer,
 });
 
 const logger = (store: { getState: () => any }) => {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Join.css';
 import { useDispatch } from 'react-redux';
-import { joinDataAction } from '../../state/actions/JoinAction';
+import { logInAction } from '../../state/actions/JoinAction';
 import Alert from './Alert';
 
 interface Props { }
@@ -45,7 +45,7 @@ const Join = (props: Props) => {
             <button
               type='submit'
               onClick={() => {
-                dispatch(joinDataAction({ name: { name } }));
+                dispatch(logInAction({ name: { name } }));
               }}
               id='login-button'
             >

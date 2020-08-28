@@ -1,6 +1,10 @@
-import { ActionTypes, JOIN_DATA } from '../types';
+import { ActionTypes, LOG_IN, LOG_OUT } from '../types';
 
-export const joinDataAction = (value: object): ActionTypes => ({
-  type: JOIN_DATA,
+export const logInAction = (value: object): ActionTypes => ({
+  type: LOG_IN,
   payload: value,
+});
+
+export const logOutAction = (): ActionTypes => ({
+  type: LOG_OUT,
 });
