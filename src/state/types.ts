@@ -3,6 +3,7 @@ export interface logInState {
   name: string;
   users: Array<object>;
   socket: any;
+  avatar:string;
   isAuthenticated: boolean;
 }
 // chat state

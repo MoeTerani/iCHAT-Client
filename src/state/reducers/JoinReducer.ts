@@ -4,12 +4,13 @@ const initialState: logInState = {
   name: '',
   socket: null,
   users: [],
+  avatar:'',
   isAuthenticated: false,
 };
 export default (state = initialState, action: ActionTypes): logInState => {
   switch (action.type) {
     case LOG_IN:
-      return { ...state, name: action.payload.name, users: action.payload.users,socket: action.payload.socket, isAuthenticated: true };
+      return { ...state, name: action.payload.name, users: action.payload.users,socket: action.payload.socket,avatar: action.payload.avatar,isAuthenticated: true };
 
     case LOG_OUT:
         return { ...initialState };

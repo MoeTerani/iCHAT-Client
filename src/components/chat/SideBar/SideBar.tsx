@@ -1,6 +1,7 @@
 import React from 'react';
 import './SideBar.css';
 import { IoMdSquare } from 'react-icons/io';
+import { UserCard } from '../user/UserCard';
 
 interface Props {}
 const SideBar = ({ users }: { users: Array<object> }) => {
@@ -11,8 +12,7 @@ const SideBar = ({ users }: { users: Array<object> }) => {
       </div>
       {users.map((user: any, i: number) => (
         <div key={i} className='activeUsers'>
-          <IoMdSquare className='onlineIcon' />
-          <p>{user.name}</p>
+          <UserCard name={user.name} avatar={user.avatar}/>
         </div>
       ))}
     </div>

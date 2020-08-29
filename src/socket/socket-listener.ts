@@ -10,8 +10,8 @@ export  const socketListener = (name:any, socket:any, dispatch:any) =>{
   socket.emit('join', { name: name }, () => {});
 
     
-    socket.on('successful-connection', (name: string) => {
-        dispatch(logInAction({ name: { name },socket:socket }))
+    socket.on('successful-connection', (name: string,avatar:string) => {
+        dispatch(logInAction({ name: { name },socket:socket,avatar }))
       });
       socket.on('message', (msg: object) => {
         dispatch(addMessageAction(msg)) 
