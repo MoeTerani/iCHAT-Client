@@ -6,7 +6,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   const isAuthenticated = useSelector(
     (state) => state.JoinReducer.isAuthenticated
   );
-
+  console.log({ isAuthenticated });
   return (
     <Route
       {...rest}

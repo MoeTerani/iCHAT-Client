@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import './Join.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logInAction } from '../../state/actions/JoinAction';
 import Alert from './Alert';
+import { connectSocketListener } from '../../socket/socket-init';
+import { setTimeout } from 'timers';
+import { RootState } from '../../state/store';
 
 interface Props { }
 
 const Join = (props: Props) => {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
+const isAuthenticated =   useSelector((state: RootState) => state.JoinReducer.isAuthenticated);
 
   const dispatch = useDispatch();
   // useEffect(() => {
@@ -39,7 +43,8 @@ const Join = (props: Props) => {
             <button
               type='submit'
               onClick={() => {
-                dispatch(logInAction({ name: { name } }));
+                connectSocketListener(name,dispatch);
+                
               }}
               id='login-button'
             >
