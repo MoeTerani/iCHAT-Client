@@ -8,7 +8,7 @@ interface Props {
   name: string;
 }
 
-const Message = ({ message, name }: Props) => {
+const Message = ({ message, name ,}: Props) => {
   let isSentByCurrentUser = false;
 
   const trimedUserName = String(name).trim().toLowerCase();
@@ -17,24 +17,45 @@ const Message = ({ message, name }: Props) => {
     isSentByCurrentUser = true;
   }
   return isSentByCurrentUser ? (
-    <div className='messageContainer justifyEnd'>
-      <p className='sentText pr-10'>{trimedUserName}</p>
-      <div className='messageBox backgroundBlue'>
+
+
+
+    <div className='messageContainer justifyEnd '>
+      <p className='sentText pr-10'>{message.time}</p>
+      
+      <div className='messageBox backgroundBlue right'>
         <p className='messageText colorWhite'>
           {ReactEmoji.emojify(message.text)}
         </p>
       </div>
+      <div className="message--avatar">
+          <img src={message.avatar} alt="user avatar" /></div>
     </div>
+  
   ) : (
-    <div className='messageContainer justifyStart'>
-      <div className='messageBox backgroundLight'>
-        <p className='messageText colorDark'>
-          {ReactEmoji.emojify(message.text)}
-        </p>
-      </div>
-      <p className='sentText pl-10 '>{message.user}</p>
-    </div>
+  //   <div className="message new">
+  //   <figure className="avatar">
+  //     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80.jpg"/>
+  //     </figure>
+  //     {ReactEmoji.emojify(message.text)}
+  // <div className="timestamp">{message.time}</div>
+  //     </div>
+
+
+
+<div className='messageContainer justifyStart '>
+<div className="message--avatar">
+          <img src={message.avatar} alt="user avatar" /></div>
+<div className='messageBox backgroundLight left'>
+  <p className='messageText colorDark'>
+    {ReactEmoji.emojify(message.text)}
+  </p>
+</div>
+<p className='sentText pl-10 '>{message.time}</p>
+</div>
   );
 };
 
 export default Message;
+
+
