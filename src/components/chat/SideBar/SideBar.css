@@ -1,4 +1,4 @@
-.textContainer {
+.sidebar--Container {
   display: flex;
   flex-direction: column;
   margin-left: 100px;
@@ -22,7 +22,7 @@
   padding-left: 10px;
 }
 
-.textContainer h1 {
+.sidebar--Container h1 {
   margin-bottom: 0px;
   text-align: center;
 }
@@ -36,17 +36,17 @@
   color: lightgreen;
   font-size: 1rem;
 }
-.headerConatiner {
+.sidebar--header {
   height: 60px;
   padding: 0 30px;
   background-color: #201f22;
 }
-.headerConatiner h1 {
+.sidebar--header h1 {
   line-height: 100%;
 }
 
-/* @media (min-width: 320px) and (max-width: 1200px) {
-  .textContainer {
-    flex-wrap: wrap;
+@media (max-width: 768px) {
+  .sidebar--Container {
+    display: none;
   }
-} */
+}

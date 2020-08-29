@@ -63,7 +63,7 @@ const Chat = (props: Props) => {
       {/* {!connected ? <Redirect to='/' /> : null} */}
 
       <SideBar users={users} />
-      <div className='container'>
+      <div className='container--chat'>
         <StatusBar  socket={socket}/>
         <Messages messages={messages} name={name.name} />
         <InputBar

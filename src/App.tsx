@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Join from './components/join/Join';
 import Chat from './components/chat/Chat';
 import PrivateRoute from './utilities/PrivateRoute'
+import './App.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from './state/store';
 

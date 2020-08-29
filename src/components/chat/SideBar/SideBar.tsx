@@ -5,8 +5,8 @@ import { IoMdSquare } from 'react-icons/io';
 interface Props {}
 const SideBar = ({ users }: { users: Array<object> }) => {
   return (
-    <div className='textContainer'>
-      <div className='headerConatiner'>
+    <div className='sidebar--Container'>
+      <div className='sidebar--header'>
         <h1>Online Users</h1>
       </div>
       {users.map((user: any, i: number) => (

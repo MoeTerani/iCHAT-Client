@@ -20,9 +20,9 @@ const isAuthenticated =   useSelector((state: RootState) => state.JoinReducer.is
     return <Redirect to='/chat' />;
   }
   return (
-    <div className='wrapper--join'>
+    <div className='wrapper--join '>
       <Alert />
-      <div className='container--join'>
+      <div className='container--join '>
         <h1>Welcome</h1>
 
         <form className='form--join'>

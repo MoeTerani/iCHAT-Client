@@ -1,6 +1,6 @@
 .form--bar {
   display: flex;
-  border: 1px solid #848688;
+  /* border: 1px solid #848688; */
 }
 
 .input--bar {
@@ -18,6 +18,11 @@ textarea:focus,
 select:focus {
   outline: none;
 }
+textarea:focus,
+input:focus,
+button:focus {
+  outline: none;
+}
 
 .sendButton {
   color: #fff !important;
@@ -27,6 +32,10 @@ select:focus {
   border: none;
   width: 15%;
   cursor: pointer;
+}
+.sendButton:hover {
+  color: #248a52 !important;
+  background: #248a52;
 }
 .sendIcon {
   width: 25px;

@@ -7,21 +7,23 @@
   background-color: #19171d;
 }
 
-.container {
+.container--chat {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: #1a1d21;
-  border-radius: 8px;
+  border-radius: 30px;
   height: 60%;
   width: 35%;
+  overflow: hidden;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
-  .outerContainer {
+@media (max-width: 768px) {
+  .container--chat {
     flex-wrap: nowrap;
-
+    width: 100%;
     height: 100%;
+    border-radius: 0px;
   }
 
   .container {
