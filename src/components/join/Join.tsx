@@ -34,13 +34,7 @@ const Join = (props: Props) => {
             value={name}
             required
           />
-          {/* <input
-            className='input--join'
-            type='text'
-            placeholder='Room'
-            onChange={(e) => setRoom(e.target.value)}
-            value={room}
-          /> */}
+          
           <Link to='/chat'>
             <button
               type='submit'

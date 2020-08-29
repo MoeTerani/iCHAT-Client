@@ -9,6 +9,7 @@ import Messages from './MessagesContainer/Messages';
 import SideBar from './SideBar/SideBar';
 import { Redirect } from 'react-router-dom';
 import { setAlert } from '../../state/actions/alert-action';
+import { logOutAction } from '../../state/actions/JoinAction';
 
 interface Props { }
 
@@ -19,7 +20,7 @@ const Chat = (props: Props) => {
   const [message, setMessage] = useState<string>('');
   const [messages, setMessages] = useState([]);
   const [users, setUsers] = useState([]);
-  const [connected, setConnected] = useState(true);
+  // const [connected, setConnected] = useState(true);
   const [error, setError] = useState('');
 
   // const dispatch = useDispatch();
@@ -40,6 +41,8 @@ const Chat = (props: Props) => {
     return () => {
       socket.emit('disconnect');
       socket.off();
+      dispatch(logOutAction())
+
       console.log('unmounted');
     };
   }, [ENDPOINT, dispatch, error, name.name]);
@@ -54,13 +57,14 @@ const Chat = (props: Props) => {
     });
     socket.on('timeOut', (data: any) => {
       socket.emit('inActiveUser');
-      setConnected(false);
+      // setConnected(false);
       socket.close();
+      dispatch(logOutAction())
     dispatch(setAlert('Disconnected due to inactivity', 'danger'));
     });
     socket.on('login_error', (data: any) => {
       const err = data.errorMessage
-      setConnected(false)
+      // setConnected(false)
       setError(data.errorMessage);
       dispatch(setAlert(err,'danger'))
       socket.close();
@@ -79,7 +83,7 @@ const Chat = (props: Props) => {
 
   return (
     <div className='outerContainer'>
-      {!connected ? <Redirect to='/' /> : null}
+      {/* {!connected ? <Redirect to='/' /> : null} */}
 
       <SideBar users={users} />
       <div className='container'>
