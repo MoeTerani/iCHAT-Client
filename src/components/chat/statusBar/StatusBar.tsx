@@ -5,14 +5,13 @@ import { ImExit } from 'react-icons/im';
 import io from 'socket.io-client';
 import { logOutAction } from '../../../state/actions/JoinAction';
 import { useDispatch } from 'react-redux';
+import { disconnect } from '../../../socket/socket-init';
 
 interface Props { }
 
-const StatusBar = (props: Props) => {
+const StatusBar = ({socket}:{socket:any}) => {
   const dispatch = useDispatch();
-  const ENDPOINT = 'localhost:5000';
 
-  let socket = io(ENDPOINT);
   return (
     <div className='statusBar'>
       <div className='leftInnerContainer'>
@@ -22,6 +21,7 @@ const StatusBar = (props: Props) => {
         <a href='/'  onClick={() => {
           socket.emit('disconnect')
           dispatch(logOutAction())
+          disconnect(socket);
           }}>
             
           <ImExit className='closeIcon' />

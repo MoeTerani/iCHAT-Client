@@ -64,7 +64,7 @@ const Chat = (props: Props) => {
 
       <SideBar users={users} />
       <div className='container'>
-        <StatusBar />
+        <StatusBar  socket={socket}/>
         <Messages messages={messages} name={name.name} />
         <InputBar
           message={message}

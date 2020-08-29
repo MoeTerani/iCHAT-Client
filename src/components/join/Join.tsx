@@ -12,17 +12,13 @@ interface Props { }
 
 const Join = (props: Props) => {
   const [name, setName] = useState('');
-  const [room, setRoom] = useState('');
 const isAuthenticated =   useSelector((state: RootState) => state.JoinReducer.isAuthenticated);
 
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   effect;
-  //   return () => {
-  //     cleanup;
-  //   };
-  // }, [input]);
-
+  
+  if (isAuthenticated) {
+    return <Redirect to='/chat' />;
+  }
   return (
     <div className='wrapper--join'>
       <Alert />
