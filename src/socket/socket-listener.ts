@@ -6,7 +6,9 @@ import { setAlert } from "../state/actions/alert-action";
 
 
 export  const socketListener = (name:any, socket:any, dispatch:any) =>{
-    socket.emit('join', { name: name }, () => {});
+
+  socket.emit('join', { name: name }, () => {});
+
     
     socket.on('successful-connection', (name: string) => {
         dispatch(logInAction({ name: { name },socket:socket }))
@@ -20,15 +22,38 @@ export  const socketListener = (name:any, socket:any, dispatch:any) =>{
       socket.on('timeOut', (data: any) => {
         socket.emit('inActiveUser');
         // setConnected(false);
-        socket.close();
         dispatch(logOutAction())
         dispatch(clearChatAction())
+        socket.close();
       dispatch(setAlert('Disconnected due to inactivity', 'danger'));
       });
       socket.on('login_error', (data: any) => {
+        socket.close();
         const err = data.errorMessage
         dispatch(setAlert(err,'danger'))
-        socket.close();
   
+      });
+      // if server is not available
+      socket.on('connect_error', () => {
+        dispatch(logOutAction())
+        dispatch(clearChatAction())
+        socket.close();
+        dispatch(setAlert('Server is not available','danger'));
+      });
+
+      // if server initiate the disconnection
+      socket.on('disconnect', (reason:any) => {
+        dispatch(logOutAction())
+        dispatch(clearChatAction())
+        socket.close();
+          dispatch(setAlert('Server is disconnected','danger'));
+      });
+      // if any error accurse
+      socket.on('error', (error:any) => {
+        dispatch(logOutAction())
+        dispatch(clearChatAction())
+        socket.close();
+        const err =  error
+          dispatch(setAlert(err,'danger'));
       });
     }
