@@ -7,6 +7,7 @@ import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from './state/store';
 import NavBar from './components/layout/NavBar';
+import Alert from './components/join/Alert';
 
 function App() {
   // const isAuthenticated =   useSelector((state: RootState) => state.JoinReducer.isAuthenticated);
@@ -15,6 +16,7 @@ function App() {
     <Router>
       <div className='App'>
         <NavBar />
+        {/* <Alert /> */}
         <Switch>
           <PrivateRoute path='/chat' exact component={Chat} />
           <Route path='/' exact component={Join} />

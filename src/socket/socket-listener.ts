@@ -3,6 +3,7 @@ import { logInAction, logOutAction } from "../state/actions/JoinAction";
 import { useDispatch } from "react-redux";
 import { addMessageAction, usersAction, clearChatAction } from "../state/actions/chat";
 import { setAlert } from "../state/actions/alert-action";
+import { REMOVE_ALL_ALERTS } from '../state/types';
 
 
 export  const socketListener = (name:any, socket:any, dispatch:any) =>{
@@ -25,10 +26,12 @@ export  const socketListener = (name:any, socket:any, dispatch:any) =>{
         dispatch(logOutAction())
         dispatch(clearChatAction())
         socket.close();
+        dispatch({type: REMOVE_ALL_ALERTS})
       dispatch(setAlert('Disconnected due to inactivity', 'danger'));
       });
       socket.on('login_error', (data: any) => {
         socket.close();
+        dispatch({type: REMOVE_ALL_ALERTS})
         const err = data.errorMessage
         dispatch(setAlert(err,'danger'))
   
@@ -38,6 +41,7 @@ export  const socketListener = (name:any, socket:any, dispatch:any) =>{
         dispatch(logOutAction())
         dispatch(clearChatAction())
         socket.close();
+        dispatch({type: REMOVE_ALL_ALERTS})
         dispatch(setAlert('Server is not available','danger'));
       });
 
@@ -47,6 +51,7 @@ export  const socketListener = (name:any, socket:any, dispatch:any) =>{
         dispatch(logOutAction())
         dispatch(clearChatAction())
         socket.close();
+        dispatch({type: REMOVE_ALL_ALERTS})
           dispatch(setAlert('Server is disconnected','danger'));
       });
       // if any error accurse

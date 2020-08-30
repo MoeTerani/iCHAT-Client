@@ -64,6 +64,12 @@ body {
   height: 100vh;
   color: var(--fontColor);
 }
+/* .App {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+} */
 /*  DARK AND LIGHT THEME START*/
 * {
   color: var(--fontColor);

@@ -1,4 +1,4 @@
-import { SET_ALERT, REMOVE_ALERT } from '../types';
+import { SET_ALERT, REMOVE_ALERT,REMOVE_ALL_ALERTS } from '../types';
 
 const initialState: any = [];
 
@@ -11,6 +11,8 @@ export default (
       return [...state, payload];
     case REMOVE_ALERT:
       return state.filter((alert: any) => alert.id !== payload);
+    case REMOVE_ALL_ALERTS:
+      return [...initialState];
 
     default:
       return state;
