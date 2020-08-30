@@ -34,7 +34,7 @@ const Join = (props: Props) => {
             value={name}
             required
           />
-          <h6>Enter your Github username to get your github avatar </h6>
+          <h6>Github username will give you Github avatar </h6>
 
           <Link to='/chat'>
             <button

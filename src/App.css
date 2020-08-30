@@ -35,7 +35,7 @@
   --navBg: var(--nav-gray);
   --navLinkHoverBg: var(--msuGreen);
   --mainBg: var(--dark-background);
-  --fontColor: var(--sage);
+  --fontColor: var(--goldCrayola);
   --cardBG: var(--card-gray);
 }
 .light-theme {
@@ -44,7 +44,7 @@
   --navBg: var(--nav-gray);
   --navLinkHoverBg: var(--paleSpringBud);
   --mainBg: var(--light-background);
-  --fontColor: var(--gray);
+  --fontColor: var(--light-color);
   --cardBG: var(--gray);
 }
 
