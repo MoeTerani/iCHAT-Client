@@ -3,7 +3,7 @@ import { logOutAction } from '../state/actions/JoinAction';
 import { socketListener } from './socket-listener';
 import { clearChatAction } from '../state/actions/chat';
 
-const ENDPOINT = 'https://ichat-server-heroku.herokuapp.com/';
+const ENDPOINT = 'localhost:5000';
 
 export const connectSocketListener = (name:string,dispatch:any) => {
     const socket = io(ENDPOINT, {
