@@ -1,6 +1,9 @@
 /* Global Styles */
 :root {
-  --primary-color: #17a2b8;
+  --chatFoooter-size: 75px;
+  --dark-transparent: rgba(0, 0, 0, 0.5);
+  --light-transparent: rgba(0, 0, 0, 0.2);
+  --primary-color: #2979ff;
   --dark-color: #343a40;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
@@ -18,23 +21,30 @@
   --bg-gray: #35363a;
   --card-gray: #3c4043;
   --nav-light-gray: #343a40;
+  --light-background: linear-gradient(
+    to bottom right,
+    #50a3a2 0%,
+    #2979ff 100%
+  );
+  /* --dark-background: linear-gradient(to bottom right, #19171d 0%, #222529 100%); */
+  --dark-background: linear-gradient(147deg, #000000 0%, #04619f 74%);
 }
 .dark-theme {
   --themeDropDownBg: var(--msuGreen);
   --themeIconBorderColor: var(--richBlackForeground);
   --navBg: var(--nav-gray);
   --navLinkHoverBg: var(--msuGreen);
-  --mainBg: var(--bg-gray);
-  --fontColor: var(--white);
+  --mainBg: var(--dark-background);
+  --fontColor: var(--sage);
   --cardBG: var(--card-gray);
 }
 .light-theme {
   --themeDropDownBg: var(--goldCrayola);
   --themeIconBorderColor: var(--sage);
-  --navBg: var(--nav-light-gray);
+  --navBg: var(--nav-gray);
   --navLinkHoverBg: var(--paleSpringBud);
-  --mainBg: var(--light-color);
-  --fontColor: var(--black);
+  --mainBg: var(--light-background);
+  --fontColor: var(--gray);
   --cardBG: var(--gray);
 }
 
@@ -42,7 +52,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition: background-color 0.5s ease, color 1s ease;
+  transition: background 0.5s ease, color 1s ease;
 }
 
 body {
@@ -50,6 +60,8 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   background: var(--mainBg);
+
+  height: 100vh;
   color: var(--fontColor);
 }
 /*  DARK AND LIGHT THEME START*/
@@ -64,10 +76,6 @@ nav {
 /* nav ul li:hover {
     background-color: var(--navLinkHoverBg);
   } */
-
-#root {
-  background: var(--mainBg);
-}
 
 /*  DARK AND LIGHT THEME END*/
 .switch {

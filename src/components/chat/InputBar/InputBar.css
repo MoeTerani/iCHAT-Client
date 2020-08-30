@@ -1,6 +1,6 @@
 .form--bar {
   display: flex;
-  /* border: 1px solid #848688; */
+  height: var(--chatFoooter-size);
 }
 
 .input--bar {
@@ -8,8 +8,9 @@
   border-radius: 0;
   padding: 5%;
   width: 85%;
+  height: var(--chatFoooter-size) !important;
   font-size: 1.2em;
-  background-color: #222529;
+  background: var(--dark-transparent);
   color: white;
 }
 
@@ -26,16 +27,16 @@ button:focus {
 
 .sendButton {
   color: #fff !important;
-  background: #222529;
+  background: var(--dark-transparent);
   padding: 1px;
   display: inline-block;
   border: none;
   width: 15%;
   cursor: pointer;
+  height: var(--chatFoooter-size);
 }
 .sendButton:hover {
-  color: #248a52 !important;
-  background: #248a52;
+  background: var(--primary-color);
 }
 .sendIcon {
   width: 25px;
