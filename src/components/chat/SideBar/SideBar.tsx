@@ -1,6 +1,5 @@
 import React from 'react';
 import './SideBar.css';
-import { IoMdSquare } from 'react-icons/io';
 import { UserCard } from '../user/UserCard';
 
 interface Props {}

@@ -1,6 +1,4 @@
-import react from 'react';
 import { logInAction, logOutAction } from "../state/actions/JoinAction";
-import { useDispatch } from "react-redux";
 import { addMessageAction, usersAction, clearChatAction } from "../state/actions/chat";
 import { setAlert } from "../state/actions/alert-action";
 import { REMOVE_ALL_ALERTS } from '../state/types';

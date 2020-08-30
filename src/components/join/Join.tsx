@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import './Join.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { logInAction } from '../../state/actions/JoinAction';
 import Alert from './Alert';
 import { connectSocketListener } from '../../socket/socket-init';
-import { setTimeout } from 'timers';
 import { RootState } from '../../state/store';
 
 interface Props {}

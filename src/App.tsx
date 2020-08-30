@@ -4,14 +4,9 @@ import Join from './components/join/Join';
 import Chat from './components/chat/Chat';
 import PrivateRoute from './utilities/PrivateRoute';
 import './App.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from './state/store';
 import NavBar from './components/layout/NavBar';
-import Alert from './components/join/Alert';
 
 function App() {
-  // const isAuthenticated =   useSelector((state: RootState) => state.JoinReducer.isAuthenticated);
-
   return (
     <Router>
       <div className='App'>
@@ -23,10 +18,6 @@ function App() {
         </Switch>
       </div>
     </Router>
-    // <div>
-    //     {isAuthenticated ? <Chat /> : <Join  />}
-
-    // </div>
   );
 }
 
