@@ -28,7 +28,8 @@
 .messageContainer {
   display: flex;
   justify-content: flex-end;
-  padding: 0 5%;
+  align-items: center;
+  padding: 0 1.5%;
   margin-top: 3px;
 }
 
@@ -38,14 +39,20 @@
   font-family: Helvetica;
   color: #828282;
   letter-spacing: 0.3px;
-  font-size: 12px;
+  font-size: 10px;
 }
-
+.message--currentUser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .pl-10 {
   padding-left: 10px;
+  flex-wrap: nowrap;
 }
 
 .pr-10 {
+  flex-wrap: nowrap;
   padding-right: 10px;
 }
 
@@ -243,6 +250,12 @@ Avatar
   margin: 0;
   padding: 0;
   border: 2px solid rgba(255, 255, 255, 0.24);
+}
+.right--avatar {
+  margin-left: 1.5%;
+}
+.left--avatar {
+  margin-right: 1.5%;
 }
 .message--avatar img {
   width: 100%;
