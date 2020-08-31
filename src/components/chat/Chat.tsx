@@ -27,8 +27,6 @@ const Chat = (props: Props) => {
   useEffect(() => {
     return () => {
       disconnect(socket);
-
-      console.log('unmounted');
     };
   }, [name.name, socket]);
 

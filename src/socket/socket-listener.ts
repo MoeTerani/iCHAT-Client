@@ -45,19 +45,11 @@ export  const socketListener = (name:any, socket:any, dispatch:any) =>{
 
       // if server initiate the disconnection
       socket.on('disconnect', (reason:any) => {
-        console.log(reason)
         dispatch(logOutAction())
         dispatch(clearChatAction())
         socket.close();
         dispatch({type: REMOVE_ALL_ALERTS})
           dispatch(setAlert('Server is disconnected','danger'));
       });
-      // if any error accurse
-      // socket.on('error', (error:any) => {
-      //   dispatch(logOutAction())
-      //   dispatch(clearChatAction())
-      //   socket.close();
-      //   const err =  error
-      //     dispatch(setAlert(err,'danger'));
-      // });
+
     }
