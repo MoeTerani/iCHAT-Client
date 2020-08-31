@@ -1,6 +1,6 @@
 import React from 'react';
 import './SideBar.css';
-import { UserCard } from '../user/UserCard';
+import UserCard from '../user/UserCard';
 
 interface Props {}
 const SideBar = ({ users }: { users: Array<object> }) => {

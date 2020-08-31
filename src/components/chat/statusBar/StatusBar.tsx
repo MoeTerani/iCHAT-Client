@@ -4,7 +4,7 @@ import { ImExit } from 'react-icons/im';
 import { logOutAction } from '../../../state/actions/JoinAction';
 import { useDispatch, useSelector } from 'react-redux';
 import { disconnect } from '../../../socket/socket-init';
-import { UserCard } from '../user/UserCard';
+import UserCard from '../user/UserCard';
 import { RootState } from '../../../state/store';
 
 interface Props {}

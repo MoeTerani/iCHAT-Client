@@ -1,10 +1,13 @@
 # iCHAT
 
-## 🖥 Live Demo
+# 🖥 Live Demo
 
-https://ichat-client.netlify.app/
+## https://ichat-client.netlify.app/
 
-Client side of a realtime chatroom.
+Be patient on first log-in. The Heruko servers needs some seconds to start the server.
+<br/><br/>
+
+### Client side of a realtime chatroom.
 
 - It has protected routes. chat page is not accessible without authentication.
 - A username validation has been applied with corresponding Error messages.
@@ -15,6 +18,7 @@ Client side of a realtime chatroom.
 - Client will be disconnected automatically by a configurable timeout.
 - With any connection lost , corresponding Error messages will be send to the client and notifications to others in the chat.
 - Provides readable logging solution
+  <br/><br/>
 
 ## 👨‍💻 Tech stack
 
@@ -27,6 +31,7 @@ Client side of a realtime chatroom.
 - React-router-dom
 - UUID
 - Enzyme
+  <br/><br/>
 
 ## Back-End
 
@@ -41,16 +46,19 @@ Client side of a realtime chatroom.
 - cors
 - Github API
 - Adorable.io API
+  <br/><br/>
 
 ## 🔥 Getting started
 
 After cloning the repository:
 
 - start by running `npm i` inside the `root folder` and then `npm start`.
+  <br/><br/>
 
 ## Test
 
 - In order to run the tests run `npm test` inside the root directory.
+  <br/><br/>
 
 ## Linter
 

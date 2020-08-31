@@ -17,7 +17,7 @@ const Message = ({ message, name }: Props) => {
     isSentByCurrentUser = true;
   }
   return isSentByCurrentUser ? (
-    <div className='messageContainer justifyEnd '>
+    <div id='Message' className='messageContainer justifyEnd '>
       <p className='sentText pr-10'>{message.time}</p>
 
       <div className='messageBox backgroundBlue right'>
@@ -30,7 +30,7 @@ const Message = ({ message, name }: Props) => {
       </div>
     </div>
   ) : (
-    <div className='messageContainer justifyStart '>
+    <div id='Message' className='messageContainer justifyStart '>
       <div className='message--avatar left--avatar'>
         <img src={message.avatar} alt='user avatar' />
       </div>
