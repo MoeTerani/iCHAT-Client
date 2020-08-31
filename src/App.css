@@ -5,7 +5,7 @@
   --light-transparent: rgba(0, 0, 0, 0.2);
   --primary-color: #2979ff;
   --dark-color: #343a40;
-  --light-color: #f4f4f4;
+  --light-color: #f3f3f3;
   --danger-color: #dc3545;
   --success-color: #28a745;
   --navHeight: 70px;
@@ -13,7 +13,7 @@
   --paleSpringBud: #dedaba;
   --goldCrayola: #e5c687;
   --richBlackForeground: #0f1a20;
-  --white: #f8f8f8;
+  --white: #fff;
   --black: #222;
   --msuGreen: #2d4739;
   --gray: #ddd;
@@ -35,7 +35,7 @@
   --navBg: var(--nav-gray);
   --navLinkHoverBg: var(--msuGreen);
   --mainBg: var(--dark-background);
-  --fontColor: var(--goldCrayola);
+  --fontColor: var(--light-color);
   --cardBG: var(--card-gray);
 }
 .light-theme {
@@ -44,7 +44,7 @@
   --navBg: var(--nav-gray);
   --navLinkHoverBg: var(--paleSpringBud);
   --mainBg: var(--light-background);
-  --fontColor: var(--light-color);
+  --fontColor: var(--white);
   --cardBG: var(--gray);
 }
 
