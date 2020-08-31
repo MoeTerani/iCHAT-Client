@@ -4,7 +4,7 @@
 
 ## https://ichat-client.netlify.app/
 
-Be patient on first log-in. The Heruko servers needs some seconds to start the server.
+Be patient on first log-in. The Heruko server needs some time to get up and running.
 <br/><br/>
 
 ### Client side of a realtime chatroom.
