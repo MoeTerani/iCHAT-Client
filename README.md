@@ -4,7 +4,7 @@
 
 https://ichat-client.netlify.app/
 
-Server side of a realtime chatroom.
+Client side of a realtime chatroom.
 
 - It has protected routes. chat page is not accessible without authentication.
 - A username validation has been applied with corresponding Error messages.
