@@ -25,7 +25,8 @@ Client side of a realtime chatroom.
 - socket.io-client
 - Redux-thunk
 - React-router-dom
-- Uuid
+- UUID
+- Enzyme
 
 ## Back-End
 
@@ -46,6 +47,10 @@ Client side of a realtime chatroom.
 After cloning the repository:
 
 - start by running `npm i` inside the `root folder` and then `npm start`.
+
+## Test
+
+- In order to run the tests run `npm test` inside the root directory.
 
 ## Linter
 
