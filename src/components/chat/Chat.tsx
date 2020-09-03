@@ -8,7 +8,7 @@ import Messages from './MessagesContainer/Messages';
 import SideBar from './SideBar/SideBar';
 import { disconnect } from '../../socket/socket-init';
 
-interface Props {}
+interface Props { }
 
 const Chat = (props: Props) => {
   const [message, setMessage] = useState<string>('');
@@ -22,7 +22,6 @@ const Chat = (props: Props) => {
   );
   const users: any = useSelector((state: RootState) => state.chatReducer.users);
 
-  // let socket:any;
 
   useEffect(() => {
     return () => {
@@ -30,7 +29,7 @@ const Chat = (props: Props) => {
     };
   }, [name.name, socket]);
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   const sendMessage = (e: React.KeyboardEvent<HTMLInputElement>) => {
     e.preventDefault();

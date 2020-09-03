@@ -11,7 +11,6 @@ function App() {
     <Router>
       <div className='App'>
         <NavBar />
-        {/* <Alert /> */}
         <Switch>
           <PrivateRoute path='/chat' exact component={Chat} />
           <Route path='/' exact component={Join} />
